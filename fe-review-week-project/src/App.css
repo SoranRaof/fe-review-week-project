@@ -4,7 +4,7 @@
 }
 
 .articles-list {
-  text-decoration: none;
+  list-style: none;
 }
 
 .header a{
