@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getArticles } from '../utils/api';
+import { Link } from 'react-router-dom'
 
 function ArticlesList() {
    
@@ -21,16 +22,16 @@ return (
               <ul className="articles-list">
               {articles.map((article) => {
               return (
+              <Link to={`/articles/${article.article_id}`}>
               <li key={article.article_id}>
               <h2>{article.title}</h2>
               <p>Author: {article.author}</p>
               <p>Topic: {article.topic}</p>
               <p>Date: {article.created_at}</p>
               <img src={article.article_img_url} alt="article-img" />
-              <p>{article.body}</p>
               <p>Votes: {article.votes}</p>
-              <p>{article.comments}</p>
               </li>
+              </Link>
                 );
               })}
             </ul>
