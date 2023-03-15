@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import { getArticleById } from '../utils/api';
+import ArticleCommentsCard from './ArticleCommentsCard';
 
 function ArticleCard() {
     
@@ -31,6 +32,7 @@ return (
             <p>{article.body}</p>
             <p>Votes: {article.votes}</p>
             <p>Comments: {article.comment_count}</p>
+            <ArticleCommentsCard />
         </div>
     )
 }

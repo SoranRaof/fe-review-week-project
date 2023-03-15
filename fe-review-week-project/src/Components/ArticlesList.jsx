@@ -22,8 +22,8 @@ return (
               <ul className="articles-list">
               {articles.map((article) => {
               return (
-              <Link to={`/articles/${article.article_id}`}>
-              <li key={article.article_id}>
+              <Link key={article.article_id} to={`/articles/${article.article_id}`}>
+              <li>
               <h2>{article.title}</h2>
               <p>Author: {article.author}</p>
               <p>Topic: {article.topic}</p>
