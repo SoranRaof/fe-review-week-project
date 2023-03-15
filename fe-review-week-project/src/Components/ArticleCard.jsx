@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import { getArticleById } from '../utils/api';
+import ArticleCommentsCard from './ArticleCommentsCard';
 
 function ArticleCard() {
     
@@ -20,17 +21,17 @@ function ArticleCard() {
     if (isLoading) {
         return <p>Loading...</p>
     }
-
 return (
         <div className="article-card">
             <h2>{article.title}</h2>
             <p>Author: {article.author}</p>
             <p>Topic: {article.topic}</p>
-            <p>Date: {article.created_at}</p>
+            <p>Date: {article.created_at.substring(0, 10)}</p>
             <img src={article.article_img_url} alt="article-img" />
             <p>{article.body}</p>
             <p>Votes: {article.votes}</p>
             <p>Comments: {article.comment_count}</p>
+            <ArticleCommentsCard />
         </div>
     )
 }
