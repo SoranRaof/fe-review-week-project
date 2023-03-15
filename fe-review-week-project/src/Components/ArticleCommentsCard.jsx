@@ -29,10 +29,9 @@ function ArticleCommentsCard() {
             {commentsCardByArticleId.map((comment) => {
                 return (
                     <div className="comment-card" key={comment.created_at}>
-                    <h3>Comment: {comment.author} {comment.created_at}</h3>
+                    <h3>Comment: {comment.author} Date: {comment.created_at.substring(0, 10)}</h3>
                     <p>{comment.body}</p>
-                    <p>{comment.votes}</p>
-                    <p>{comment.article_id}</p>
+                    <p>Votes: {comment.votes}</p>
                     </div>
                 )
             })}
