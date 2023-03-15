@@ -20,6 +20,10 @@ function ArticleCommentsCard() {
         return <p>Loading...</p>
     }
 
+    if(commentsCardByArticleId.length === 0) {
+        return <p>"No comments yet!"</p>
+    }
+
     return ( 
             <div className="article-comments-card">
             {commentsCardByArticleId.map((comment) => {
