@@ -16,6 +16,7 @@ function App() {
       <Route path="/articles" element={<ArticlesList />} />
       <Route path="/articles/:article_id" element={<ArticleCard />} />
       <Route path="/articles/:article_id/comments" element={<ArticleCommentsCard />} />
+      <Route path="/api/articles/:article_id" element={<ArticleCard />} />
       </Routes>
     </div>
   );
