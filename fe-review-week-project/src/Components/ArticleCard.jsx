@@ -27,7 +27,11 @@ function ArticleCard() {
     if (!hasVoted) {
       setHasVoted(true);
       setVoteLikes((currentVotes) => currentVotes + 1);
-      patchVotesByArticleId(article_id, 1);
+      patchVotesByArticleId(article_id, 1).catch((error) => {
+        setHasVoted(false);
+        setVoteLikes((currentVotes) => currentVotes - 1);
+        console.error(error);
+      });
     }
   };
 
@@ -35,7 +39,11 @@ function ArticleCard() {
     if (!hasVoted) {
       setHasVoted(true);
       setVoteLikes((currentVotes) => currentVotes - 1);
-      patchVotesByArticleId(article_id, -1);
+      patchVotesByArticleId(article_id, -1).catch((error) => {
+        setHasVoted(false);
+        setVoteLikes((currentVotes) => currentVotes + 1);
+        console.error(error);
+      });
     }
   };
 
